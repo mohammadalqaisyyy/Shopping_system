@@ -1,0 +1,15 @@
+	CREATE TABLE Customer (
+		customer_id int primary key,
+		fname varchar(20) not null,
+		lname varchar(20) not null,
+		password varchar(10) not null,
+	);
+	CREATE TABLE Order_ (
+		product_id int,
+		product_name varchar(20) not null,
+		unit_price float,
+		quantity int,
+		order_date datetime,
+		customer_id int,
+		constraint fkcustomer foreign key (customer_id) references Customer (customer_id) on update cascade on delete cascade,
+	);
